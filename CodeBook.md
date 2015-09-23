@@ -17,6 +17,8 @@ This project is based on data from the UCI Machine Learning Repository,
 SITTING,STANDING,LAYING) wearing a Samsung Galaxy S II.  Data is taken
 using the embedded accelerometer and gyroscope.
 
+[1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
+
 My script uses the *dplyr* R package to group by activity and person,
 and create summary statistics.
 
@@ -92,8 +94,20 @@ Relevant Features
 -----------------
 
 The script run_analysis.R searches for case-insensitive mean
-and std (for standard deviation) in the features.txt file.  The
-features extracted are reproduced here:
+and std (for standard deviation) in the features.txt
+description file.
+
+The units are in standard units 'g' for the acceleration.  Features
+are normalized and bounded within [-1,1].
+
+The prefix *t* is used to denote time in the feature names.
+
+The prefix *f* is used to indicate frequency domain signals obtained
+using an FFT.
+
+XYZ is used to denote 3-axial signals in the X, Y, and Z directions.
+
+The features extracted are reproduced here:
 
 1. tBodyAcc-mean()-X
 2. tBodyAcc-mean()-Y
@@ -189,6 +203,12 @@ Important Variables the Script Generates
 
 *tidysum* is the result of step 5.  This gets saved into summary.txt.
 
+Summary Created
+---------------
+
+The summary.txt file creates the mean and standard deviation averages
+for each person (1-30) and each activity.  The column names are included
+in the generated output file.
 
 
 
